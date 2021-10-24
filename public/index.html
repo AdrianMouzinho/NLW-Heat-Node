@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLW Heat Impulse</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(44, 42, 42);
+        }
+        header {
+            background-color: lightgrey;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4rem;
+            width: 100%;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+        .home {
+            margin-top: 5rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+        }
+        .buttons a {
+            text-decoration: none;
+        }
+        p {
+            color: lightgrey;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="home">
+        <header>
+            <h2 class="logo">LOGO</h2>
+            <nav>
+                <ul class="menu">
+                    <li>INÍCIO</li>
+                    <li>SOBRE</li>
+                    <li>CONTATO</li>
+                </ul>
+            </nav>
+            <div class="buttons">
+                <a href="#">ENTRAR</a>
+                <a href="#">CADASTRAR-SE</a>
+            </div>
+        </header>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo inventore architecto doloribus voluptatibus velit est quo sint nesciunt magnam. Voluptate sit, laborum aliquam voluptatem sequi consectetur sapiente voluptatibus. Earum, officiis.</p>
+    </section>
+
+    <script 
+        src="https://cdn.socket.io/4.3.2/socket.io.min.js" 
+        integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" 
+        crossorigin="anonymous">
+    </script>
+    
+    <script>
+        const socket = io("http://localhost:4000");
+
+        socket.on("new_message", (data) => console.log(data));
+    </script>
+</body>
+</html>
